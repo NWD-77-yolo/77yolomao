@@ -3,23 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilibili 视频嵌入啊啊啊啊</title>
+    <title>Bilibili 视频嵌入</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ff69b4, #00bfff);
+            font-family: "微软雅黑", sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #00a1d6;
+            margin-bottom: 20px;
+            font-size: 2em;
         }
         iframe {
             width: 800px;
             height: 450px;
-            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 860px) {
+            iframe {
+                width: 90vw;
+                height: calc(90vw * 9/16);
+            }
+            .container {
+                width: 95vw;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="//player.bilibili.com/player.html?bvid=BV1njR6YdE4h&page=1" allowfullscreen></iframe>
+    <div class="container">
+        <h1>B站视频展示</h1>
+        <iframe 
+            src="//player.bilibili.com/player.html?bvid=BV1njR6YdE4h&page=1"
+            scrolling="no"
+            allowfullscreen="true"
+            frameborder="no">
+        </iframe>
+    </div>
 </body>
 </html>
